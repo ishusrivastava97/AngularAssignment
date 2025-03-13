@@ -1,0 +1,29 @@
+.display-cards-container{
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+}
+.image-container{
+    width: 100%;
+    height: 75%;
+}
+.image-container img{
+    width: 100%;
+    height: 100%; 
+    border-radius: 10px 10px 0 0;
+}
+.content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    text-align: start;
+    overflow: hidden;
+}
+.content-container span{
+    overflow-x: hidden;
+    margin-top: 1%;
+    margin-left: 2%;
+}

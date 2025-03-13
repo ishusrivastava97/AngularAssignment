@@ -1,0 +1,28 @@
+@if (loginSuccessful) {
+    <div class="register-form">
+    <p class="logo" >Login successful</p>
+    <button (click)="onLogout()" class="signin-btn" >Logout</button>
+    <button (click)="onContinueShopping()" class="signin-btn" >Continue Shopping.</button>
+    </div>
+}@else {
+    <div class="login-form">
+    <div class="form-div" >    
+    <span class="logo" >Ecommerce</span>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        
+        <input formControlName="email" type="email" placeholder="Enter your email" class="basic"  >
+        @if (loginForm.invalid && loginForm.get('email')?.dirty || loginForm.get('email')?.touched) {
+            <p class="error-message" >Email is required</p>
+        }
+        <input formControlName="password" type="password" placeholder="Enter your password" class="basic" >
+        @if (loginForm.invalid && loginForm.get('password')?.dirty || loginForm.get('password')?.touched) {
+            <p class="error-message" >Password is required</p>
+        }
+        <button class="signin-btn" type="submit"  >Login</button>
+        
+    </form>
+    <span class="span-blue" >Forget Password</span>
+    <p>Don't have an account <span (click)="onSignUp()" class="span-blue" >Sign Up</span></p>
+</div>
+</div>
+}

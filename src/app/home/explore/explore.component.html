@@ -1,0 +1,23 @@
+<section class="explore" >
+  <div class="explore-card" >
+    <span>Revamp your home in style</span>
+    <app-image-grid [cardsData]="card1data"/>
+    <span (click)="gotoallproducts()" class="explore-span" >Explore more...</span>
+  </div>
+  <div class="explore-card" >
+    <span>Top mobile accessories for your smartphone</span>
+    <app-image-grid [cardsData]="card2data" />
+    
+    <span (click)="gotoallproducts()" class="explore-span" >Explore more...</span>
+  </div>
+  <div class="explore-card" >
+    <span>Up to 60% off | Footwear & handbags</span>
+    <app-image-grid [cardsData]="card3data" />
+    <span (click)="gotoallproducts()" class="explore-span" >Explore more...</span>
+  </div>
+  <div class="explore-card" >
+    <span>Starting 99 | Home inprovement essentials</span>
+    <app-image-grid [cardsData]="card4data" />
+    <span (click)="gotoallproducts()" class="explore-span" >Explore more...</span>
+  </div>
+</section>

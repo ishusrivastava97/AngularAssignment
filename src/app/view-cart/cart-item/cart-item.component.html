@@ -1,0 +1,39 @@
+<div class="Product">
+  <div class="Product-info">
+    <div class="img-container">
+      <img [src]="product?.image" alt="" />
+    </div>
+    <span>{{ product?.title }}</span>
+  </div>
+  <div class="product-price" >
+    <div>
+      <span>${{ product?.price }}</span>
+    </div>
+  </div>
+  <div  class="product-quantity">
+    <div class="img-icon-container"  (click)="incrementQuantity()" >
+      <img
+        src="https://jayant-ecommerce-angular.onrender.com/assets/add.png"
+        alt=""
+      />
+    </div>
+    <div>
+      {{ quantity }}
+    </div>
+    <div class="img-icon-container"  (click)="decrementQuantity()" >
+      <img
+        src="https://jayant-ecommerce-angular.onrender.com/assets/subtract.png"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="product-subtotal" >
+    <div>${{ subtotal() }}</div>
+    <div class="img-icon-container"  (click)="deleteItem()" >
+      <img
+        src="https://jayant-ecommerce-angular.onrender.com/assets/delete.png"
+        alt=""
+      />
+    </div>
+  </div>
+</div>

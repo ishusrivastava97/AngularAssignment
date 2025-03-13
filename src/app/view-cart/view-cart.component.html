@@ -1,0 +1,92 @@
+<div class="cart-container">
+  <div class="cart-heading">
+    <h2>Shop for $500 and more and get 10% discount on your order</h2>
+  </div>
+  @if (cart.length===0) {
+  <div class="main">
+    <div class="main-content">
+      <h3>Item that will be added to cart will show here</h3>
+      <button (click)="onContinueShopping()">Continue Shopping</button>
+    </div>
+  </div>
+  } @if (cart.length>0) {
+  <div class="cart-item-main">
+    <div class="all-products-heading">
+      <div class="line"></div>
+      <span>Cart Items</span>
+      <div class="line"></div>
+    </div>
+    <div class="cart-items">
+      <div class="heading">
+        <span>Product</span>
+        <span>price</span>
+        <span>Quantity</span>
+        <span>Subtotal</span>
+      </div>
+      <div class="each-card">
+        @for (item of cart; track $index) {
+        <div class="cart-card-item">
+          <app-cart-item
+            [id]="item.id"
+            (removeItem)="removeCartItem($event)"
+            (quantityChanged)="updateCartQuantity($event)"
+          />
+        </div>
+        }
+      </div>
+      <div class="total-sum">
+        <div class="delivery">
+          <div class="total-pin" >
+            <div class="shipping">
+              <div class="img-container">
+                <img
+                  src="https://jayant-ecommerce-angular.onrender.com/assets/location.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="pincode">
+              <input
+                type="text"
+                [(ngModel)]="pincode"
+                pattern="[0-9]{6}"
+                maxlength="6"
+              />
+            </div>
+            <button (click)="onSubmit()">check</button>
+          </div>
+          <div class="offer-details">
+            @if (shipping) {
+            <span>free Shipping!!</span>
+            } @if(fiveDays) {
+            <span>Delivery in 5 days</span>
+            } @if(COD) {
+            <span>Cash on delivery available</span>
+            }
+          </div>
+        </div>
+        <div class="shipping-total">
+          <div class="summary" >
+            <h3>Order Summary</h3>
+            <div class="row-text" >
+              <span>Subtotal</span>
+              <span>${{ total }}</span>
+            </div>
+            <div class="row-text" >
+              <span>total Discount</span>
+              <span>$0</span>
+            </div>
+            <div class="row-text" >
+              <span>Order total</span>
+              <span>${{ total }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  }
+
+  <app-footer />
+</div>

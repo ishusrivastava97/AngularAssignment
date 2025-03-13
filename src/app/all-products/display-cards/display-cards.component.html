@@ -1,0 +1,12 @@
+<div  class="display-cards-container"  >
+    <div class="cart" >
+        
+    </div>
+    <div class="image-container" >
+        <img [src]="apiData.image" alt="">
+    </div>
+    <div  class="content-container">
+        <span (click)="loger()" >{{apiData.title}} </span>
+        <span>${{apiData.price}}</span>
+    </div>
+</div>

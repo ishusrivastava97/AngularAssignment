@@ -1,0 +1,150 @@
+.all-products{
+    margin: 0 5%;
+}
+.all-products-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 2.5%;
+}
+.all-products-heading span{
+    font-size: 2.5rem;
+}
+.line{
+    border: 1px solid rgb(255, 255, 255);
+    width: 10%;
+    
+}
+.filter {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  color: black;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: none;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.dropdown-menu .radio {
+  margin-bottom: 10px;
+}
+
+.dropdown-menu input[type="radio"] {
+  margin-right: 10px;
+}
+
+.dropdown-menu label {
+    color: black;
+  cursor: pointer;
+}
+
+.dropdown-menu button {
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+.filter:hover .dropdown-menu {
+  display: block;
+}
+
+.filter:focus .dropdown-menu {
+  display: block;
+}
+.gender{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 1rem 0;
+}
+.gender .radio{
+    margin: 0;
+}
+.gender span{
+    margin-bottom: 5%;
+    text-decoration: underline;
+}
+.categories{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 1rem 0;
+}
+.categories span{
+    margin-bottom: 5%;
+    text-decoration: underline;
+}
+.categories .radio{
+    margin: 0;
+}
+.all-products-container{
+  background-color: rgb(138, 0, 0);
+  border-radius: 1%;
+  display: grid;
+  grid-template-columns:23% 23% 23% 23%;
+  
+  gap: 1rem;
+  margin: 5% 0;
+  padding: 2rem;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1285px){
+    .all-products-container{
+        grid-template-columns: 31% 31% 31%;
+    }
+}
+@media (max-width: 780px)  {
+    .all-products-container{
+        grid-template-columns: 47% 47%;
+    }
+}  

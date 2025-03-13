@@ -1,0 +1,74 @@
+<div class="product">
+  <div class="product-detail">
+    @if (product) {
+    <div class="img-container">
+      <img [src]="product.image" alt="" />
+    </div>
+    <div class="product-info">
+      <h1>{{ product.title }}</h1>
+      <div class="rating-value">
+        <div class="rating">
+          <!-- <h2>{{}}</h2> -->
+          <span>{{ product.rating.rate }}</span>
+          <div>
+            <img
+              src="https://jayant-ecommerce-angular.onrender.com/assets/star.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="rating-count">{{ product.rating.count }} Ratings</div>
+      </div>
+      <div class="pricing-info">
+        <span>${{ product.price }}</span>
+        <span class="dashed">$456</span>
+        <span>75%off</span>
+      </div>
+<div class="btn-container">
+@if (Itemcart.length <= 0) {
+  <button (click)="goToCart(product)">
+    Add to cart
+  </button>
+}
+
+ @if (hasItemInCart(product.id)) { 
+      <button (click)="addedToCart()">
+        Added to cart
+      </button>
+    }
+
+
+  <button (click)="addToCart(product)">Buy Now</button>
+</div>
+      <h1>Product Details</h1>
+      <p>{{ product.description }}</p>
+    </div>
+    }
+  </div>
+
+  <div class="all-products-heading">
+    <div class="line"></div>
+    <span>trending products</span>
+    <div class="line"></div>
+  </div>
+  <!-- <div class="trending" > 
+    @for (item of treandingProducts; track $index) {
+      <div class="trending-card" >
+      <app-display-cards [apiData]="item" (click)="goToProductDetails(item.id)"/>
+      <button class="btn"  (click)="addToCart(item)">Buy Now</button>
+      </div>
+    }
+  </div> -->
+  <div class="trending">
+    @if (relatedProducts) { @for (product of relatedProducts ; track $index) {
+    <div class="trending-card">
+      <app-display-cards
+        [apiData]="product"
+        (click)="goToProductDetails(product.id)"
+      />
+      <button class="btn" (click)="addToCart(product)">Buy Now</button>
+    </div>
+    } }
+  </div>
+  <app-footer/>
+</div>

@@ -1,0 +1,142 @@
+.container {
+  margin: 0 5%;
+}
+.banner {
+  height: 40vh;
+  background-color: rgb(138, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+}
+.content {
+  /* border: 1px solid white; */
+  height: 60%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 0 2rem;
+  font-size: 2rem;
+}
+.banner section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.img-container {
+  /* border: 1px solid white;    */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.img-child {
+  /* border: 1px solid white; */
+  width: 50%;
+  /* height: 100%; */
+}
+.img-child img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+.signin-btn:hover {
+  background-color: #d3d3d3;
+}
+
+.signin-btn {
+  width: 70%;
+  padding: 10px 10px;
+  color: rgb(138, 0, 0);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  transition: 0.2sease;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .banner {
+    height: 70vh;
+  }
+  section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+  .content {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    font-size: 2rem;
+
+    gap: 1.5rem;
+    border: 1px solid white;
+  }
+  .content button {
+    width: 100%;
+  }
+  .img-container {
+    justify-content: center;
+  }
+  .img-child {
+    height: 100%;
+  }
+}
+.all-products-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 2.5%;
+}
+.all-products-heading span{
+    font-size: 2.5rem;
+}
+.line{
+    border: 1px solid rgb(255, 255, 255);
+    width: 10%;
+    
+}
+.trending{
+  background-color: rgb(138, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.trending-card{
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.btn{
+      width: 100%;
+    padding: 10px 0;
+    color: rgb(138, 0, 0);
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    transition: .2s ease;
+    cursor: pointer;
+    border-radius: 10px;
+    /* color: #d3d3d3; */
+}
+.btn:hover{
+  background-color: #d3d3d3;
+}
+
+

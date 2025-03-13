@@ -1,0 +1,42 @@
+<header>
+  
+  <div class="logo" (click)="goToHome()">Ecommerce</div>
+  <ul>
+    <div class="search-container" >
+    <li  >
+      <img class="search" alt="search icon" src="https://jayant-ecommerce-angular.onrender.com/assets/material-symbols--search.png">
+      <input
+        type="text"
+        name="query"
+        placeholder="Search products by name, category ..."
+        [(ngModel)]="searchQuery" 
+        (ngModelChange)="updateSearchQuery()"
+        (input)="onSearchChange()" 
+      />
+    </li>
+    </div>
+    <li (click)="goToCart()">
+      <img alt="cart-icon" src="https://jayant-ecommerce-angular.onrender.com/assets/cart-white.png">
+      <span id="cartCount">0</span>
+    </li>
+    <li (click)="goToRegister()">
+      <img alt="user-icon" src="https://jayant-ecommerce-angular.onrender.com/assets/user.png">
+    </li>
+  </ul>
+  
+  <div class="search-container-mobile" >
+    
+    <li  >
+      <img class="search" alt="search icon" src="https://jayant-ecommerce-angular.onrender.com/assets/material-symbols--search.png">
+      <input
+        class="search-input"
+        type="text"
+        name="query"
+        placeholder="Search products by name, category ..."
+        [(ngModel)]="searchQuery" 
+        (input)="onSearchChange()" 
+      />
+    </li>
+  </div>
+    
+</header>

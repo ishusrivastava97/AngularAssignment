@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="banner">
+    <section>
+      <div class="content">
+        <span>Grab upto 50% of on all laptop bags</span>
+        <button class="signin-btn" (click)="onBuyNow()">Buy Now →</button>
+      </div>
+      <div class="img-container">
+        <div class="img-child">
+          <img
+            src="https://jayant-ecommerce-angular.onrender.com/assets/laptopBag.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="card-container">
+    <app-explore></app-explore>
+  </div>
+  <div class="all-products-heading">
+    <div class="line"></div>
+    <span>trending products</span>
+    <div class="line"></div>
+  </div>
+  <div class="trending">
+    @for (item of treandingProducts; track $index) {
+    <div class="trending-card">
+      <app-display-cards
+        [apiData]="item"
+        (click)="goToProductDetails(item.id)"
+      />
+      <button class="btn" (click)="addToCart(item)">Buy Now</button>
+    </div>
+    }
+  </div>
+</div>
+<app-footer />

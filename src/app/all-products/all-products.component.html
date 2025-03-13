@@ -1,0 +1,96 @@
+<div class="all-products">
+  <div class="all-products-heading">
+    <div class="line"></div>
+    <span>All Products</span>
+    <div class="line"></div>
+  </div>
+
+  <div class="filter">
+    <div class="dropdown">
+      <button
+        class="dropdown-toggle"
+        type="button"
+        id="filter-dropdown"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Filter by Category
+      </button>
+      <div class="dropdown-menu" aria-labelledby="filter-dropdown">
+        <div class=" gender" >
+          <span>By Gender:</span>
+        <div class="radio">
+          <label>
+            <input
+            
+              type="radio"
+              name="filter"
+              value="men"
+              (change)="filterProducts('men\'s clothing')"
+               [checked]="categories==='men\'s clothing'"
+            />
+            Men
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input
+            [checked]="categories==='women\'s clothing'"
+              type="radio"
+              name="filter"
+              value="women"
+              (change)="filterProducts('women\'s clothing')"
+            />
+            Women
+          </label>
+        </div>
+        </div>
+        <div class="categories">
+          <span>By Categories:</span>
+        <div class="radio">
+          <label>
+            <input
+            [checked]="categories==='electronics'"
+              type="radio"
+              name="filter"
+              value="electronics"
+              (change)="filterProducts('electronics')"
+            />
+            Electronics
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input
+            #input
+              type="radio"
+              name="filter"
+              value="jewelery"
+              (change)="filterProducts('jewelery')"
+              [checked]="categories==='jewelery'"
+            />
+            Jewelery
+          </label>
+        </div>
+        </div>
+        <button class="btn btn-link" (click)="clearFilters()">
+          Clear all filters
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="all-products-container">
+    
+    @for (item of filteredProducts; track $index) {
+      <app-display-cards [apiData]="item" (click)="goToProductDetails(item.id)"/>
+    }
+    <!-- @if (filteredProducts.length === 0) {
+      <div>
+        No Products Found!!
+      </div>
+    } -->
+  </div>
+</div>
+<app-footer></app-footer>

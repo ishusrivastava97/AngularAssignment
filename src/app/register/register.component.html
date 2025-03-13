@@ -1,0 +1,54 @@
+<div class="register-form" >
+    <div class="form-div">
+      <span class="logo" >Ecommerce</span>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" type="text" placeholder="Your Good Name" class="name-input basic"> 
+  @if (registerForm.invalid && registerForm.get('name')?.dirty || registerForm.get('name')?.touched) {
+     <p class="error-message" >Name is required</p>
+  }
+  <input formControlName="email" type="email" placeholder="Enter Email" class="email-input basic">
+  <!-- <p class="error-message " ngIf="email.invalid && (email.dirty || email.touched)">Please enter a valid email</p> -->
+   @if (registerForm.invalid && registerForm.get('email')?.dirty || registerForm.get('email')?.touched) {
+     <p class="error-message" >Email is required</p>
+   }
+  <input formControlName="password" type="password" placeholder="your password" class="password-input basic">
+  @if (registerForm.invalid && registerForm.get('password')?.dirty || registerForm.get('password')?.touched) {
+     <p class="error-message" >Password must be at least 6 characters long</p>
+  }
+  <!-- <p class="error-message" ngIf="password.invalid && (password.dirty || password.touched)">Password must be at least 6 characters long</p> -->
+
+  <div class="gender-input-main">
+    <label for="">Gender*</label>
+    <div class="btn-radio" >
+    <div>
+      <label for="male">Male</label>
+      <input type="radio" value="male" formControlName="gender">
+    </div>
+    <div>
+      <label for="Female">Female</label>
+      <input type="radio" value="female" formControlName="gender">
+    </div>
+    <div>
+      <label for="Other">Other</label>
+      <input type="radio" value="other" formControlName="gender">
+    </div>
+    </div>
+  </div>
+  <!-- <p class="error-message" ngIf="gender.invalid && (gender.dirty || gender.touched)">Choose a Gender</p> -->
+   @if (registerForm.invalid && registerForm.get('mobileNumber')?.dirty || registerForm.get('mobileNumber')?.touched) {
+     <p class="error-message" >Mobile Number is required</p>
+   }
+  <input formControlName="mobileNumber" type="tel" placeholder="Your Mobile Number*" class="mobile-input basic">
+  <!-- <p class="error-message" ngIf="mobileNumber.invalid && (mobileNumber.dirty || mobileNumber.touched)">Mobile Number is required</p> -->
+   @if (registerForm.invalid && registerForm.get('mobileNumber')?.dirty || registerForm.get('mobileNumber')?.touched) {
+     <p class="error-message" >Mobile Number is required</p>
+   }
+
+  <button class="signup-btn" type="submit">Sign Up</button>
+  
+</form>
+<span  class="span-blue" >Forgot Password?</span>
+<p>Already have a account. <span class="span-blue" (click)="onGoToLogin()">Go To login</span></p>
+</div>
+
+</div>
